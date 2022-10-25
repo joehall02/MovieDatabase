@@ -89,7 +89,7 @@ namespace MovieDatabase
             Layout();
 
             // loops through collection to check for films with the inputted age rating
-            // going to change to a list of age rating
+            // going to change to a list of age rating 
             foreach (KeyValuePair<string, Movie> movie in Movies)
             {
                 if (movie.Value.GetAgeRating() == searchAge)

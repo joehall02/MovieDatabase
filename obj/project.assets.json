@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/joehall/Projects/MovieDatabase/MovieDatabase.csproj",
+      "projectUniqueName": "/Users/joehall/Projects/MovieDatabase/MovieDatabase/MovieDatabase.csproj",
       "projectName": "MovieDatabase",
-      "projectPath": "/Users/joehall/Projects/MovieDatabase/MovieDatabase.csproj",
+      "projectPath": "/Users/joehall/Projects/MovieDatabase/MovieDatabase/MovieDatabase.csproj",
       "packagesPath": "/Users/joehall/.nuget/packages/",
-      "outputPath": "/Users/joehall/Projects/MovieDatabase/obj/",
+      "outputPath": "/Users/joehall/Projects/MovieDatabase/MovieDatabase/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/joehall/.nuget/NuGet/NuGet.Config"
