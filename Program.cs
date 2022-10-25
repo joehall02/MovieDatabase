@@ -6,7 +6,7 @@
             while(true)
             {
 
-                Console.WriteLine("Hello lrdfhsjknvxz.");
+                
                 // menu
                 string prompt = "pick an option";
                 string[] options = { "List all movies", "Search for a movie", "Search by age range", "Search by genre", "Search by runtime", "Search by date", "Add a movie", "Remove a movie" };
