@@ -48,7 +48,8 @@ namespace MovieDatabase
             foreach (KeyValuePair<string, Movie> movie in Movies)
             {              
                 // used this resource for string formatting https://www.csharp-examples.net/align-string-with-spaces/
-                Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(), movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));                
+                Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(),
+                movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));                
             }            
         }
 
@@ -68,7 +69,8 @@ namespace MovieDatabase
             if(Movies.ContainsKey(searchName))
             {
                 Layout();
-                Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", Movies[searchName].GetName(), Movies[searchName].GetAgeRating(), Movies[searchName].GetGenre(), Movies[searchName].GetRuntime().Hours + "hrs " + Movies[searchName].GetRuntime().Minutes + "m", Movies[searchName].GetDateOfRelease().Day + "/" + Movies[searchName].GetDateOfRelease().Month + "/" + Movies[searchName].GetDateOfRelease().Year));
+                Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", Movies[searchName].GetName(), Movies[searchName].GetAgeRating(), Movies[searchName].GetGenre(),
+                Movies[searchName].GetRuntime().Hours + "hrs " + Movies[searchName].GetRuntime().Minutes + "m", Movies[searchName].GetDateOfRelease().Day + "/" + Movies[searchName].GetDateOfRelease().Month + "/" + Movies[searchName].GetDateOfRelease().Year));
             } else
             {
                 Console.WriteLine("Sorry, that film is not in our database");
@@ -94,7 +96,8 @@ namespace MovieDatabase
             {
                 if (movie.Value.GetAgeRating() == searchAge)
                 {
-                    Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(), movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));
+                    Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(),
+                    movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));
                 }
                
             }
@@ -116,7 +119,8 @@ namespace MovieDatabase
             {
                 if (movie.Value.GetGenre() == searchGenre)
                 {
-                    Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(), movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));
+                    Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(),
+                    movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));
                 }
             }
         }
@@ -137,7 +141,8 @@ namespace MovieDatabase
             {
                 if (movie.Value.GetRuntime().Hours == Int32.Parse(searchRuntime))
                 {
-                    Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(), movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));
+                    Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(),
+                    movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));
                 }
             }
         }
@@ -157,7 +162,8 @@ namespace MovieDatabase
             {
                 if (movie.Value.GetDateOfRelease().Year == Int32.Parse(searchYear))
                 {
-                    Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(), movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));
+                    Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(),
+                    movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));
                 }
             }
         }
@@ -202,6 +208,8 @@ namespace MovieDatabase
 
             // adds new movie to the data file
             File.AppendAllText("data.txt", newMovie + Environment.NewLine);
+
+            Console.WriteLine("Movie added successfully");
         }
 
         private static void UpdateData()
@@ -232,6 +240,7 @@ namespace MovieDatabase
             {
                 Movies.Remove(movieToRemove);
                 UpdateData();
+                Console.WriteLine("Movie removed successfully");
             } else
             {
                 Console.WriteLine("That movie isn't in the database");
