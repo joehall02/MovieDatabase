@@ -73,7 +73,7 @@ namespace MovieDatabase
                 Movies[searchName].GetRuntime().Hours + "hrs " + Movies[searchName].GetRuntime().Minutes + "m", Movies[searchName].GetDateOfRelease().Day + "/" + Movies[searchName].GetDateOfRelease().Month + "/" + Movies[searchName].GetDateOfRelease().Year));
             } else
             {
-                Console.WriteLine("Sorry, that film is not in our database");
+                Console.WriteLine("Unfortunately that film is not in our database");
             }
 
         }
@@ -85,13 +85,42 @@ namespace MovieDatabase
             GetMovieData();
 
             Console.WriteLine("What is the age rating of the films you want to see?");
-            string searchAge = Console.ReadLine();
+            string searchAge = "";
+                //= Console.ReadLine();
+
+            // creating new instance of menu class to search for age rating 
+            string prompt = "Choose age rating:";
+            string[] options = { "U", "PG", "12", "12A", "15", "18" };
+            Menu ageRatingMenu = new Menu(options, prompt);
+
+            int selectedIndex = ageRatingMenu.Run();
+
+            switch(selectedIndex)
+            {
+                case 0:
+                    searchAge = "U";
+                    break;
+                case 1:
+                    searchAge = "PG";
+                    break;
+                case 2:
+                    searchAge = "12";
+                    break;
+                case 3:
+                    searchAge = "12A";
+                    break;
+                case 4:
+                    searchAge = "15";
+                    break;
+                case 5:
+                    searchAge = "18";
+                    break;
+            }
 
             Console.Clear();
             Layout();
 
-            // loops through collection to check for films with the inputted age rating
-            // going to change to a list of age rating 
+            // loops through collection to check for films with the inputted age rating            
             foreach (KeyValuePair<string, Movie> movie in Movies)
             {
                 if (movie.Value.GetAgeRating() == searchAge)

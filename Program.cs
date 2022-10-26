@@ -8,8 +8,8 @@
                 while(true)
                 {
                     // menu
-                    string prompt = "Welcome to the definitive Movie Database, Please choose an option";
-                    string[] options = { "List all movies", "Search for a movie", "Search by age range", "Search by genre", "Search by runtime", "Search by date", "Add a movie", "Remove a movie", "Quit" };
+                    string prompt = "Welcome to the definitive Movie Database!\nPlease choose an option:";
+                    string[] options = { "List all movies", "Search for a movie", "Search by age rating", "Search by genre", "Search by runtime", "Search by date", "Add a movie", "Remove a movie", "Quit" };
                     Menu mainMenu = new Menu(options, prompt);
 
                     int selectedIndex = mainMenu.Run();
