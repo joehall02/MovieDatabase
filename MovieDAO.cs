@@ -9,7 +9,7 @@ namespace MovieDatabase
         private static Dictionary<string, Movie> Movies = new Dictionary<string, Movie>();
        
 
-        public static void GetMovieData()
+        private static void GetMovieData()
         {
             // clears movie dictionary on rerun 
             Movies.Clear();

@@ -8,8 +8,8 @@
                 while(true)
                 {
                     // menu
-                    string prompt = "pick an option";
-                    string[] options = { "List all movies", "Search for a movie", "Search by age range", "Search by genre", "Search by runtime", "Search by date", "Add a movie", "Remove a movie" };
+                    string prompt = "Welcome to the definitive Movie Database, Please choose an option";
+                    string[] options = { "List all movies", "Search for a movie", "Search by age range", "Search by genre", "Search by runtime", "Search by date", "Add a movie", "Remove a movie", "Quit" };
                     Menu mainMenu = new Menu(options, prompt);
 
                     int selectedIndex = mainMenu.Run();
@@ -54,6 +54,11 @@
                         // removes a movie
                         case 7:
                             MovieDAO.RemoveMovie();
+                            break;
+                        // quits app
+                        case 8:
+                            // https://www.tutorialspoint.com/exit-methods-in-chash-application
+                            Environment.Exit(0);
                             break;
                         default:
                             Console.WriteLine("Error");
