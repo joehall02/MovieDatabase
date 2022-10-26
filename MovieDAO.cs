@@ -84,10 +84,8 @@ namespace MovieDatabase
             Console.Clear();
             GetMovieData();
 
-            Console.WriteLine("What is the age rating of the films you want to see?");
             string searchAge = "";
-                //= Console.ReadLine();
-
+               
             // creating new instance of menu class to search for age rating 
             string prompt = "Choose age rating:";
             string[] options = { "U", "PG", "12", "12A", "15", "18" };
@@ -95,25 +93,26 @@ namespace MovieDatabase
 
             int selectedIndex = ageRatingMenu.Run();
 
+            // sets the searchAge variable to the selected menu option
             switch(selectedIndex)
             {
                 case 0:
-                    searchAge = "U";
+                    searchAge = options[0];
                     break;
                 case 1:
-                    searchAge = "PG";
+                    searchAge = options[1];
                     break;
                 case 2:
-                    searchAge = "12";
+                    searchAge = options[2];
                     break;
                 case 3:
-                    searchAge = "12A";
+                    searchAge = options[3];
                     break;
                 case 4:
-                    searchAge = "15";
+                    searchAge = options[4];
                     break;
                 case 5:
-                    searchAge = "18";
+                    searchAge = options[5];
                     break;
             }
 
@@ -139,7 +138,44 @@ namespace MovieDatabase
             GetMovieData();
 
             Console.WriteLine("What is the genre of the film you're looking for?");
-            string searchGenre = Console.ReadLine();
+            string searchGenre = "";
+
+            string prompt = "Choose a genre:";
+            string[] options = { "Action", "Adventure", "Animation", "Biography", "Crime", "Drama", "Horror", "Sci-Fi", "War" };
+            Menu genreMenu = new Menu(options, prompt);
+
+            int selectedIndex = genreMenu.Run();
+
+            switch (selectedIndex)
+            {
+                case 0:
+                    searchGenre = options[0];
+                    break;
+                case 1:
+                    searchGenre = options[1];
+                    break;
+                case 2:
+                    searchGenre = options[2];
+                    break;
+                case 3:
+                    searchGenre = options[3];
+                    break;
+                case 4:
+                    searchGenre = options[4];
+                    break;
+                case 5:
+                    searchGenre = options[5];
+                    break;
+                case 6:
+                    searchGenre = options[6];
+                    break;
+                case 7:
+                    searchGenre = options[7];
+                    break;
+                case 8:
+                    searchGenre = options[8];
+                    break;
+            }
 
             Console.Clear();
             Layout();
