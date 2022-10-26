@@ -197,7 +197,28 @@ namespace MovieDatabase
             GetMovieData();
 
             Console.WriteLine("How many hours long is the film you want to watch?");
-            string searchRuntime = Console.ReadLine();
+            string searchRuntime = "";
+
+            string prompt = "Choose a runtime:";
+            string[] options = { "0-1 Hours", "1-2 Hours", "2-3 Hours", "3-4 Hours" };
+            Menu runtimeMenu = new Menu(options, prompt);
+            int selectedIndex = runtimeMenu.Run();
+
+            switch (selectedIndex)
+            {
+                case 0:
+                    searchRuntime = "0";
+                    break;
+                case 1:
+                    searchRuntime = "1";
+                    break;
+                case 2:
+                    searchRuntime = "2";
+                    break;
+                case 3:
+                    searchRuntime = "3";
+                    break;
+            }
 
             Console.Clear();
             Layout();
