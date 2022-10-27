@@ -7,14 +7,15 @@
             {
                 while(true)
                 {
-                    // menu
+                    // menu                    
                     string prompt = "Welcome to the definitive Movie Database!\nPlease choose an option:";
                     string[] options = { "List all movies", "Search for a movie", "Search by age rating", "Search by genre", "Search by runtime", "Search by date", "Add a movie", "Remove a movie", "Quit" };
-                    Menu mainMenu = new Menu(options, prompt);
+                    Menu mainMenu = new Menu(options, prompt);                    
+                    Console.ResetColor();
 
                     int selectedIndex = mainMenu.Run();
 
-                    // if selected index == n then call certain moviaDAO options
+                    // if selected index == n then call certain moviaDAO functions
             
                     switch (selectedIndex) {
                         // gets movie list
@@ -50,10 +51,12 @@
                         // adds a movie
                         case 6:
                             MovieDAO.AddMovie();
+                            Console.Read();
                             break;
                         // removes a movie
                         case 7:
                             MovieDAO.RemoveMovie();
+                            Console.Read();
                             break;
                         // quits app
                         case 8:
@@ -107,7 +110,7 @@
                     // help command
                     case "help":
                         string[] commands = { "list", "search", "age", "genre", "runtime", "date", "add", "remove" };
-                        Console.WriteLine("Commands:");
+                        Console.WriteLine("Movie Database Command List:");
                         foreach (string item in commands)
                         {
                             Console.WriteLine(item);

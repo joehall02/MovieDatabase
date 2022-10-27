@@ -21,7 +21,12 @@ namespace MovieDatabase
         // method to draw out the menu
         private void DrawMenu()
         {
+            // https://stackoverflow.com/questions/2743260/is-it-possible-to-write-to-the-console-in-colour-in-net
+            // Console.BackgroundColor = ConsoleColor.White;
+            //Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.DarkBlue;            
             Console.WriteLine(Prompt);
+            Console.ResetColor();
 
             for (int i = 0; i < Options.Length; i++)
             {
@@ -38,7 +43,10 @@ namespace MovieDatabase
 
                 // for every option passed it will output the option and add the selctor arrow to the
                 // start of the selected item
+                
                 Console.WriteLine(selectorArrow + currentOption);
+                
+
             }
         }
 

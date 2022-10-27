@@ -33,7 +33,9 @@ namespace MovieDatabase
         private static void Layout()
         {
             Console.WriteLine("------------------------------------------------------------------------------------------");
-            Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", "Name", "Age Rating", "Genre", "Runtime", "Date Released"));
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", "Name", "Age Rating", "Genre", "Runtime", "Date Released  "));
+            Console.ResetColor();
             Console.WriteLine("------------------------------------------------------------------------------------------");
         }
 
@@ -73,7 +75,7 @@ namespace MovieDatabase
                 Movies[searchName].GetRuntime().Hours + "hrs " + Movies[searchName].GetRuntime().Minutes + "m", Movies[searchName].GetDateOfRelease().Day + "/" + Movies[searchName].GetDateOfRelease().Month + "/" + Movies[searchName].GetDateOfRelease().Year));
             } else
             {
-                Console.WriteLine("Unfortunately that film is not in our database");
+                Console.WriteLine("Unfortunately, that film is not in our database");
             }
 
         }
@@ -321,7 +323,7 @@ namespace MovieDatabase
 
             // checks if the movies dictionary contains the inputted movie
             // if it does then it gets removed from the movie collection
-
+            Console.Clear();
             if(Movies.ContainsKey(movieToRemove))
             {
                 Movies.Remove(movieToRemove);
@@ -329,7 +331,7 @@ namespace MovieDatabase
                 Console.WriteLine("Movie removed successfully");
             } else
             {
-                Console.WriteLine("That movie isn't in the database");
+                Console.WriteLine("Unfotunately, that movie isn't in the database");
             }
         }
     }
