@@ -59,9 +59,9 @@
                             Console.Read();
                             break;
                         // quits app
-                        case 8:
+                        case 8:                            
                             // https://www.tutorialspoint.com/exit-methods-in-chash-application
-                            Environment.Exit(0);
+                            Environment.Exit(0);                            
                             break;
                         default:
                             Console.WriteLine("Error");

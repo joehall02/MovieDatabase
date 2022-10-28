@@ -263,9 +263,9 @@ namespace MovieDatabase
             Console.WriteLine("Name of the movie:");
             string name = Console.ReadLine();
             Console.WriteLine();
-
+            
             Console.WriteLine("Age rating:");
-            string ageRating = Console.ReadLine();
+            string ageRating = Console.ReadLine();            
             Console.WriteLine();
 
             Console.WriteLine("Genre:");
