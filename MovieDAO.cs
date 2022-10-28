@@ -260,44 +260,150 @@ namespace MovieDatabase
         public static void AddMovie()
         {
             Console.Clear();
+                
             Console.WriteLine("Name of the movie:");
             string name = Console.ReadLine();
             Console.WriteLine();
             
             Console.WriteLine("Age rating:");
-            string ageRating = Console.ReadLine();            
-            Console.WriteLine();
+            string ageRating = Console.ReadLine();
+            string[] ageRatings = { "U", "PG", "12", "12A", "15", "18" };
 
-            Console.WriteLine("Genre:");
-            string genre = Console.ReadLine();
-            Console.WriteLine();
+            // checks to make sure the user enters a valid age rating
+            if (ageRatings.Contains(ageRating))
+            {
+                Console.WriteLine();
 
-            Console.WriteLine("Hours:");
-            int hours = Int32.Parse(Console.ReadLine());
-            Console.WriteLine();
+                Console.WriteLine("Genre:");
+                string genre = Console.ReadLine();
+                string[] genres = { "Action", "Adventure", "Animation", "Biography", "Crime", "Drama", "Horror", "Sci-Fi", "War" };
 
-            Console.WriteLine("Minutes:");
-            int minutes = Int32.Parse(Console.ReadLine());
-            Console.WriteLine();
+                // checks to make sure the user enters a valid genre
+                if (genres.Contains(genre))
+                {
+                    Console.WriteLine();
 
-            Console.WriteLine("Year of release:");
-            int year = Int32.Parse(Console.ReadLine());
-            Console.WriteLine();
+                    Console.WriteLine("Hours:");
+                    
+                    int hours = 0;
+                    // checks to make sure the user inputs an int
+                    try
+                    {
+                        hours = Int32.Parse(Console.ReadLine());
 
-            Console.WriteLine("Month:");
-            int month = Int32.Parse(Console.ReadLine());
-            Console.WriteLine();
+                    } catch (System.FormatException)
+                    {
+                        Console.WriteLine("The value you entered was not a number, try again");
+                        return;
+                            
+                    }
+                    // checks to make sure the hour is less than 24, due to using timespan object
+                    if (hours <= 24)
+                    {
+                        Console.WriteLine();
 
-            Console.WriteLine("Day:");
-            int day = Int32.Parse(Console.ReadLine());
+                        Console.WriteLine("Minutes:");
 
-            string newMovie = name + "::" + ageRating + "::" + genre + "::" +
-            hours + "::" + minutes + "::" + year + "::" + month + "::" + day;
+                        int minutes = 0;
+                        try
+                        {
+                            minutes = Int32.Parse(Console.ReadLine());
+                        }
+                        catch (System.FormatException)
+                        {
+                            Console.WriteLine("The value you entered was not a number, try again");
+                            return;
+                        }
+                        // checks to make sure inputted minutes is less than 60
+                        if (minutes < 60)
+                        {
+                            Console.WriteLine();
 
-            // adds new movie to the data file
-            File.AppendAllText("data.txt", newMovie + Environment.NewLine);
+                            Console.WriteLine("Year of release:");
+                            int year = 0000;
+                            try
+                            {
+                                year = Int32.Parse(Console.ReadLine());
+                            }
+                            catch (System.FormatException)
+                            {
+                                Console.WriteLine("The value you entered for not a number, try again");
+                                return;
+                            }
+                            // checks to make sure the year is valid, year has to be after the first ever film made
+                            // and <= the current year
+                            if (year > 1888 && year <= DateTime.Now.Year)
+                            {
+                                Console.WriteLine();
 
-            Console.WriteLine("Movie added successfully");
+                                Console.WriteLine("Month(Number):");
+                                int month = 0;
+                                try
+                                {
+                                    month = Int32.Parse(Console.ReadLine());
+                                }
+                                catch (System.FormatException)
+                                {
+                                    Console.WriteLine("Sorry, the value you entered was not valid, make sure you enter the month number");
+                                    return;
+                                }
+                                // check to make sure the inputted month is 1-12
+                                if (month > 0 && month <= 12)
+                                {
+
+                                    Console.WriteLine();
+
+                                    Console.WriteLine("Day:");
+                                    int day = 0;
+                                    try
+                                    {
+                                        day = Int32.Parse(Console.ReadLine());
+                                    }
+                                    catch (System.FormatException)
+                                    {
+                                        Console.WriteLine("The value you entered was not a number, try again");
+                                    }
+                                    // checks to make sure the inputted day is accurate
+                                    if (day > 0 && day <= 31)
+                                    {
+                                        string newMovie = name + "::" + ageRating + "::" + genre + "::" +
+                                        hours + "::" + minutes + "::" + year + "::" + month + "::" + day;
+
+                                        // adds new movie to the data file
+                                        File.AppendAllText("data.txt", newMovie + Environment.NewLine);
+
+                                        Console.WriteLine("Movie added successfully");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Sorry, the day you entered was not valid, try again");
+                                    }
+                                } else
+                                {
+                                    Console.WriteLine("Sorry, the month you entered was not valid, try again");
+                                }
+                            } else
+                            {
+                                Console.WriteLine("Sorry, the year you entered was not valid, try again");
+                            }
+
+                        } else
+                        {
+                            Console.WriteLine("Sorry, the value you entered was too high, try again");
+                        }                        
+                    }
+                    else
+                    {
+                        Console.WriteLine("Sorry, the length of the movie is too long, try again");                        
+                    }                        
+                } else
+                {
+                    Console.WriteLine("That is not a valid genre, try again");                   
+                }
+            } else
+            {
+                Console.WriteLine("That is not a valid age rating, try again");                
+            }                                           
         }
 
         private static void UpdateData()
