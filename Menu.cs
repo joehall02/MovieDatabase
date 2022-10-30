@@ -84,7 +84,7 @@ namespace MovieDatabase
                 }
                 // method does the above code until the enter key is pressed,
                 // then it returns the selectedindex in order to determine what
-                // functions need to be called
+                // Movie DAO function need to be called
             } while (KeyPress != ConsoleKey.Enter);
 
             return SelectedIndex;

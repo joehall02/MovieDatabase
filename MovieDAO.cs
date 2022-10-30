@@ -315,7 +315,7 @@ namespace MovieDatabase
                             return;
                         }
                         // checks to make sure inputted minutes is less than 60
-                        if (minutes < 60)
+                        if (minutes > 0 && minutes < 60)
                         {
                             Console.WriteLine();
 
@@ -389,7 +389,7 @@ namespace MovieDatabase
 
                         } else
                         {
-                            Console.WriteLine("Sorry, the value you entered was too high, try again");
+                            Console.WriteLine("Sorry, the value you entered was not valid, try again");
                         }                        
                     }
                     else
@@ -411,6 +411,7 @@ namespace MovieDatabase
             // removes all the contents from the data file
             File.WriteAllText("data.txt", "");
 
+            // adds each movie from the movies list back to the data file
             foreach (KeyValuePair<string, Movie> movie in Movies)
             {
                 File.AppendAllText("data.txt", movie.Value.GetName() + "::" + movie.Value.GetAgeRating() + "::" + movie.Value.GetGenre() +

@@ -76,40 +76,40 @@
                 switch(args[0])
                 {
                     // gets movie list
-                    case "list":
+                    case "-list":
                         MovieDAO.GetMovies();
                         break;
                     // searches for movie
-                    case "search":
+                    case "-search":
                         MovieDAO.SearchMovie();
                         break;
                     // searches for age rating
-                    case "age":
+                    case "-age":
                         MovieDAO.SearchAgeRating();
                         break;
                     // searches for genre
-                    case "genre":
+                    case "-genre":
                         MovieDAO.SearchGenre();
                         break;
                     // searches for runtime
-                    case "runtime":
+                    case "-runtime":
                         MovieDAO.SearchRuntime();
                         break;
                     // searches for date
-                    case "date":
+                    case "-date":
                         MovieDAO.SearchDate();
                         break;
                     // add movie
-                    case "add":
+                    case "-add":
                         MovieDAO.AddMovie();
                         break;
                     // remove movie
-                    case "remove":
+                    case "-remove":
                         MovieDAO.RemoveMovie();
                         break;
                     // help command
-                    case "help":
-                        string[] commands = { "list", "search", "age", "genre", "runtime", "date", "add", "remove" };
+                    case "-help":
+                        string[] commands = { "-list", "-search", "-age", "-genre", "-runtime", "-date", "-add", "-remove", "-help" };
                         Console.WriteLine("Movie Database Command List:");
                         foreach (string item in commands)
                         {
@@ -118,7 +118,7 @@
                         Console.WriteLine();
                         break;
                     default:
-                        Console.WriteLine("Unrecognised Command, try the 'help' command to see a list of available commands");
+                        Console.WriteLine("Unrecognised Command, try the '-help' command to see a list of available commands");
                         break;
                 }
             }
