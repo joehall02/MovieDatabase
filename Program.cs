@@ -67,7 +67,7 @@
                             Console.WriteLine("Error");
                             break;
                     }
-                } 
+                }
             }
             // only runs the else statement if given command line arguments
             else
