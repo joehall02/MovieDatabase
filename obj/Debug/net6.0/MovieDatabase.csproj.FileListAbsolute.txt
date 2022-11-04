@@ -28,3 +28,18 @@
 /Users/joehall/Projects/MovieDatabase/obj/Debug/net6.0/MovieDatabase.pdb
 /Users/joehall/Projects/MovieDatabase/obj/Debug/net6.0/MovieDatabase.genruntimeconfig.cache
 /Users/joehall/Projects/MovieDatabase/obj/Debug/net6.0/ref/MovieDatabase.dll
+C:\Users\Joe Hall\Source\Repos\MovieDatabase\bin\Debug\net6.0\MovieDatabase.exe
+C:\Users\Joe Hall\Source\Repos\MovieDatabase\bin\Debug\net6.0\MovieDatabase.deps.json
+C:\Users\Joe Hall\Source\Repos\MovieDatabase\bin\Debug\net6.0\MovieDatabase.runtimeconfig.json
+C:\Users\Joe Hall\Source\Repos\MovieDatabase\bin\Debug\net6.0\MovieDatabase.dll
+C:\Users\Joe Hall\Source\Repos\MovieDatabase\bin\Debug\net6.0\MovieDatabase.pdb
+C:\Users\Joe Hall\Source\Repos\MovieDatabase\obj\Debug\net6.0\MovieDatabase.csproj.AssemblyReference.cache
+C:\Users\Joe Hall\Source\Repos\MovieDatabase\obj\Debug\net6.0\MovieDatabase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Joe Hall\Source\Repos\MovieDatabase\obj\Debug\net6.0\MovieDatabase.AssemblyInfoInputs.cache
+C:\Users\Joe Hall\Source\Repos\MovieDatabase\obj\Debug\net6.0\MovieDatabase.AssemblyInfo.cs
+C:\Users\Joe Hall\Source\Repos\MovieDatabase\obj\Debug\net6.0\MovieDatabase.csproj.CoreCompileInputs.cache
+C:\Users\Joe Hall\Source\Repos\MovieDatabase\obj\Debug\net6.0\MovieDatabase.dll
+C:\Users\Joe Hall\Source\Repos\MovieDatabase\obj\Debug\net6.0\refint\MovieDatabase.dll
+C:\Users\Joe Hall\Source\Repos\MovieDatabase\obj\Debug\net6.0\MovieDatabase.pdb
+C:\Users\Joe Hall\Source\Repos\MovieDatabase\obj\Debug\net6.0\MovieDatabase.genruntimeconfig.cache
+C:\Users\Joe Hall\Source\Repos\MovieDatabase\obj\Debug\net6.0\ref\MovieDatabase.dll
