@@ -14,20 +14,50 @@ namespace MovieDatabase
             // clears movie dictionary on rerun 
             Movies.Clear();
 
-            // path of data file
-            string[] data = File.ReadAllLines("data.txt");
-
-            // for every line in the data file it will split up every part of the line and create a movie object from it
-            foreach (string line in data)
+            // NEEDS SORTING
+            if (File.Exists("data.txt"))
             {
-                // used this video to figure out how to split up strings in a text file https://www.youtube.com/watch?v=PJnejyvH9Dc&ab_channel=LearnCoding
-                string[] movieData = line.Split("::");
+                // path of data file
+                string[] data = File.ReadAllLines("data.txt");           
+                                   
 
-                // Used this link to learn about the timespan object https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-timespan-format-strings
-                Movies.Add(movieData[0].ToLower(), new Movie(movieData[0], movieData[1], movieData[2],
-                new TimeSpan(Int32.Parse(movieData[3]), Int32.Parse(movieData[4]), 00),
-                new DateTime(Int32.Parse(movieData[5]), Int32.Parse(movieData[6]), Int32.Parse(movieData[7])) ));
+                // for every line in the data file it will split up every part of the line and create a movie object from it
+                foreach (string line in data)
+                {
+                    // used this video to figure out how to split up strings in a text file https://www.youtube.com/watch?v=PJnejyvH9Dc&ab_channel=LearnCoding
+                    string[] movieData = line.Split("::");
+
+                    // Used this link to learn about the timespan object https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-timespan-format-strings
+                    Movies.Add(movieData[0].ToLower(), new Movie(movieData[0], movieData[1], movieData[2],
+                    new TimeSpan(Int32.Parse(movieData[3]), Int32.Parse(movieData[4]), 00),
+                    new DateTime(Int32.Parse(movieData[5]), Int32.Parse(movieData[6]), Int32.Parse(movieData[7])) ));
+                }
+            } else
+            {
+                string prompt = "Data file not found, would you like to create one?";
+                string[] options = { "Yes", "No" };
+
+                Menu fileNotFoundMemu = new Menu(options, prompt);
+                int selectedIndex = fileNotFoundMemu.Run();
+
+                switch (selectedIndex)
+                {
+                    case 0:
+                        File.Create("data.txt");
+                        
+                        Console.WriteLine("New data file created!\nPress any key to continue");
+                        Console.Read();
+                        break;
+                    case 1:
+                        Console.WriteLine("Terminating program");
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("Error");
+                        break;
+                }
             }
+
         }
 
         private static void Layout()
@@ -243,17 +273,24 @@ namespace MovieDatabase
             Console.WriteLine("What is the year of release of the film you're looking for?");
             string searchYear = Console.ReadLine();
 
-            Console.Clear();
-            Layout();
-
-            foreach (KeyValuePair<string, Movie> movie in Movies)
+            if (searchYear.Length == 4)
             {
-                if (movie.Value.GetDateOfRelease().Year == Int32.Parse(searchYear))
+                Console.Clear();
+                Layout();
+
+                foreach (KeyValuePair<string, Movie> movie in Movies)
                 {
-                    Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(),
-                    movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));
+                    if (movie.Value.GetDateOfRelease().Year == Int32.Parse(searchYear))
+                    {
+                        Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(),
+                        movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));
+                    }
                 }
+            } else
+            {
+                Console.WriteLine("The date you entered was invalid");
             }
+
         }
 
         // method to add movie to the data file
