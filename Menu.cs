@@ -22,8 +22,6 @@ namespace MovieDatabase
         private void DrawMenu()
         {
             // https://stackoverflow.com/questions/2743260/is-it-possible-to-write-to-the-console-in-colour-in-net
-            // Console.BackgroundColor = ConsoleColor.White;
-            //Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.DarkBlue;            
             Console.WriteLine(Prompt);
             Console.ResetColor();

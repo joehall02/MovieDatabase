@@ -82,7 +82,8 @@ namespace MovieDatabase
                 // used this resource for string formatting https://www.csharp-examples.net/align-string-with-spaces/
                 Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(),
                 movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));                
-            }            
+            }
+            
         }
 
         // method to search film
@@ -94,7 +95,7 @@ namespace MovieDatabase
 
             // asks for movie then stores in a variable
             Console.WriteLine("What is the name of the movie you want to find?");
-            string searchName = Console.ReadLine().ToLower();
+            string searchName = Console.ReadLine().ToLower();            
 
             Console.Clear();
             // checks if the dictionary contains the searched film and if it does it displays the information for that film
