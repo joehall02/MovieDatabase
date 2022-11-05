@@ -46,7 +46,7 @@ namespace MovieDatabase
                         File.Create("data.txt");
                         
                         Console.WriteLine("New data file created!\nPress any key to continue");
-                        Console.Read();
+                        Console.ReadLine();
                         break;
                     case 1:
                         Console.WriteLine("Terminating program");
