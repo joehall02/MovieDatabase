@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U19Ugk8YVim63I7Ey4HGGTqhpxwHD5N9M9pYUHlhOSVs7YhFa9Wcoz8lo10A0X7qr7KcujmqON4qILJNygUaCQ==",
+  "dgSpecHash": "3oLEEWguT1mKgDOiLI/KFoNjZAzH3rj3ryURwKO8gZ9DCf2z+lWi+3cajEuSJIiKk2QPA2+BvpGz2Q/YEDWn9A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Joe Hall\\Source\\Repos\\MovieDatabase\\MovieDatabase.csproj",
+  "projectFilePath": "/Users/joehall/Projects/MovieDatabase/MovieDatabase/MovieDatabase.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

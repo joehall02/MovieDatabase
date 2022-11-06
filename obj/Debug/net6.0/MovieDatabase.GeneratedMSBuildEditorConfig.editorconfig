@@ -7,4 +7,4 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MovieDatabase
-build_property.ProjectDir = C:\Users\Joe Hall\Source\Repos\MovieDatabase\
+build_property.ProjectDir = /Users/joehall/Projects/MovieDatabase/MovieDatabase/
