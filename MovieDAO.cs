@@ -14,12 +14,12 @@ namespace MovieDatabase
             // clears movie dictionary on rerun 
             Movies.Clear();
 
-            // NEEDS SORTING
-            if (File.Exists("data.txt"))
+            // NEEDS SORTING  System.IO.IOException - file being used by other process       
+            try
             {
                 // path of data file
-                string[] data = File.ReadAllLines("data.txt");           
-                                   
+                string[] data = File.ReadAllLines("data.txt");
+
 
                 // for every line in the data file it will split up every part of the line and create a movie object from it
                 foreach (string line in data)
@@ -30,9 +30,10 @@ namespace MovieDatabase
                     // Used this link to learn about the timespan object https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-timespan-format-strings
                     Movies.Add(movieData[0].ToLower(), new Movie(movieData[0], movieData[1], movieData[2],
                     new TimeSpan(Int32.Parse(movieData[3]), Int32.Parse(movieData[4]), 00),
-                    new DateTime(Int32.Parse(movieData[5]), Int32.Parse(movieData[6]), Int32.Parse(movieData[7])) ));
+                    new DateTime(Int32.Parse(movieData[5]), Int32.Parse(movieData[6]), Int32.Parse(movieData[7]))));
                 }
-            } else
+            }
+            catch (FileNotFoundException)
             {
                 string prompt = "Data file not found, would you like to create one?";
                 string[] options = { "Yes", "No" };
@@ -44,7 +45,7 @@ namespace MovieDatabase
                 {
                     case 0:
                         File.Create("data.txt");
-                        
+
                         Console.WriteLine("New data file created!\nPress any key to continue");
                         Console.ReadLine();
                         break;
