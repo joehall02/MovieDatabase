@@ -11,12 +11,11 @@ namespace MovieDatabase
 
         private static void GetMovieData()
         {
-            // clears movie dictionary on rerun 
-            Movies.Clear();
-
-            // NEEDS SORTING  System.IO.IOException - file being used by other process       
-            try
+            if (File.Exists("data.txt"))
             {
+                // clears movie dictionary on rerun 
+                Movies.Clear();
+          
                 // path of data file
                 string[] data = File.ReadAllLines("data.txt");
 
@@ -31,34 +30,14 @@ namespace MovieDatabase
                     Movies.Add(movieData[0].ToLower(), new Movie(movieData[0], movieData[1], movieData[2],
                     new TimeSpan(Int32.Parse(movieData[3]), Int32.Parse(movieData[4]), 00),
                     new DateTime(Int32.Parse(movieData[5]), Int32.Parse(movieData[6]), Int32.Parse(movieData[7]))));
-                }
-            }
-            catch (FileNotFoundException)
+                }                        
+            } else
             {
-                string prompt = "Data file not found, would you like to create one?";
-                string[] options = { "Yes", "No" };
-
-                Menu fileNotFoundMemu = new Menu(options, prompt);
-                int selectedIndex = fileNotFoundMemu.Run();
-
-                switch (selectedIndex)
+                using (FileStream fs = File.Create("data.txt"))
                 {
-                    case 0:
-                        File.Create("data.txt");
-
-                        Console.WriteLine("New data file created!\nPress any key to continue");
-                        Console.ReadLine();
-                        break;
-                    case 1:
-                        Console.WriteLine("Terminating program");
-                        Environment.Exit(0);
-                        break;
-                    default:
-                        Console.WriteLine("Error");
-                        break;
+                    fs.Close();
                 }
             }
-
         }
 
         private static void Layout()
