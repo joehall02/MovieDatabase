@@ -4,11 +4,11 @@ namespace MovieDatabase
     public class Movie
     {
         // attributes
-        string Name;
-        string AgeRating;
-        string Genre;
-        TimeSpan Runtime;
-        DateTime DateOfRelease;
+        private string Name;
+        private string AgeRating;
+        private string Genre;
+        private TimeSpan Runtime;
+        private DateTime DateOfRelease;
 
         // constructor
         public Movie(string Name, string AgeRating, string Genre, TimeSpan Runtime, DateTime DateOfRelease)

@@ -1,0 +1,26 @@
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{1043BA28-99F6-49A9-A83B-57A004BFD433}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.MovieDatabase PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MovieDAO.cs">
+    <Files>
+      <File FileName="Program.cs" />
+      <File FileName="MovieDAO.cs" Line="226" Column="1" />
+      <File FileName="Movie.cs" />
+      <File FileName="Menu.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MovieDatabase" expanded="True">
+            <Node name="MovieDatabase" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
