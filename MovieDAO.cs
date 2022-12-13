@@ -133,14 +133,13 @@ namespace MovieDatabase
             Layout();
 
             // loops through collection to check for films with the inputted age rating            
-            foreach (KeyValuePair<string, Movie> movie in Movies)
+            // algorithm function to get every movie in collection where the age rating is the same as the input
+            IEnumerable<KeyValuePair<string, Movie>> byAge = Movies.Where(m => m.Value.GetAgeRating() == searchAge);
+
+            foreach (KeyValuePair<string, Movie> movie in byAge)
             {
-                if (movie.Value.GetAgeRating() == searchAge)
-                {
-                    Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(),
-                    movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));
-                }
-               
+                Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(),
+                movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));
             }
         }
 
@@ -191,16 +190,15 @@ namespace MovieDatabase
             }
 
             Console.Clear();
-            Layout();
+            Layout();          
 
-            foreach (KeyValuePair<string, Movie> movie in Movies)
+            IEnumerable<KeyValuePair<string, Movie>> byGenre = Movies.Where(m => m.Value.GetGenre() == searchGenre);
+            foreach(KeyValuePair<string, Movie> movie in byGenre)
             {
-                if (movie.Value.GetGenre() == searchGenre)
-                {
-                    Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(),
-                    movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));
-                }
+                Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(),
+                movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));
             }
+
         }
 
         // method to search films with specific runtime
@@ -234,15 +232,14 @@ namespace MovieDatabase
             }
 
             Console.Clear();
-            Layout();
+            Layout();            
 
-            foreach (KeyValuePair<string, Movie> movie in Movies)
+            IEnumerable<KeyValuePair<string, Movie>> byRuntime = Movies.Where(m => m.Value.GetRuntime().Hours == Int32.Parse(searchRuntime));
+
+            foreach (KeyValuePair<string, Movie> movie in byRuntime)
             {
-                if (movie.Value.GetRuntime().Hours == Int32.Parse(searchRuntime))
-                {
-                    Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(),
-                    movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));
-                }
+                Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(),
+                movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));
             }
         }
 
@@ -257,15 +254,14 @@ namespace MovieDatabase
             if (searchYear.Length == 4)
             {
                 Console.Clear();
-                Layout();
+                Layout();               
 
-                foreach (KeyValuePair<string, Movie> movie in Movies)
+                IEnumerable<KeyValuePair<string, Movie>> byDate = Movies.Where(m => m.Value.GetDateOfRelease().Year == Int32.Parse(searchYear));
+
+                foreach (KeyValuePair<string, Movie> movie in byDate)
                 {
-                    if (movie.Value.GetDateOfRelease().Year == Int32.Parse(searchYear))
-                    {
-                        Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(),
-                        movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));
-                    }
+                    Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(),
+                    movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));
                 }
             } else
             {
