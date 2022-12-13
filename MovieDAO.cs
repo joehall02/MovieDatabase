@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Text;
 namespace MovieDatabase
 {
 
     public class MovieDAO
-    {
-        
+    {       
         // changed from list to dictionary to allow searching
-        private static Dictionary<string, Movie> Movies = new Dictionary<string, Movie>();
+        // added inital capacity of 100 to avoid unnecssary resizes
+        private static Dictionary<string, Movie> Movies = new Dictionary<string, Movie>(100);
        
 
         private static void GetMovieData()
@@ -58,7 +59,7 @@ namespace MovieDatabase
 
             Layout();
             foreach (KeyValuePair<string, Movie> movie in Movies)
-            {              
+            {                
                 // used this resource for string formatting https://www.csharp-examples.net/align-string-with-spaces/
                 Console.WriteLine(String.Format("{0, -33} | {1, -10} | {2, -10} | {3, -10} | {4, -10}", movie.Value.GetName(), movie.Value.GetAgeRating(), movie.Value.GetGenre(),
                 movie.Value.GetRuntime().Hours + "hrs " + movie.Value.GetRuntime().Minutes + "m", movie.Value.GetDateOfRelease().Day + "/" + movie.Value.GetDateOfRelease().Month + "/" + movie.Value.GetDateOfRelease().Year));                
